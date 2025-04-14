@@ -92,6 +92,7 @@ public:
     else printhelp(root, 0);
   }
   
+
   void printPostOrder() const {
     printPostOrderHelper(root);
   }
@@ -101,6 +102,17 @@ public:
     printPostOrderHelper(node->left);
     printPostOrderHelper(node->right);
     std::cout << node->data << " ";
+  }
+  void printPreOrder() const {
+    printPreOrderHelper(root);
+  }
+
+  void printPreOrderHelper(Node* node) const {
+    if (node == nullptr) return;
+    std::cout << node->data << " ";
+    printPreOrderHelper(node->left);
+    printPreOrderHelper(node->right);
+
   }
 };
 
