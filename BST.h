@@ -92,6 +92,16 @@ public:
     else printhelp(root, 0);
   }
   
+  void printPostOrder() const {
+    printPostOrderHelper(root);
+  }
+
+  void printPostOrderHelper(Node* node) const {
+    if (node == nullptr) return;
+    printPostOrderHelper(node->left);
+    printPostOrderHelper(node->right);
+    std::cout << node->data << " ";
+  }
 };
 
 // Visit -- prints out root
